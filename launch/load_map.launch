@@ -1,0 +1,5 @@
+<launch>
+
+   <node pkg="map_server" type="map_server" name="map_server" args="$(find v4r_gazebo)/launch/map.yaml"/>
+   
+</launch>

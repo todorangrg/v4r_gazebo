@@ -1,0 +1,5 @@
+<launch>
+
+  <node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0.25 0.0 0.1 0.0 0.0 0.0 base_link front_laser 0.1" />
+<node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-file $(find v4r_gazebo)/models/pioneer2dx_ros_laser/model.sdf -sdf -x 0.0 -y 0.0 -z 0.2 -model robot" />
+</launch>

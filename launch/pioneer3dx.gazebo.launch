@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find v4r_gazebo)/xacro/pioneer3dx.xacro'" />
+  
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model p2dx -param robot_description -x 0.0 -y 0.0 -z 0.01 "/>
+
+  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+	<param name="publish_frequency" type="double" value="30.0"/>
+	<param name="tf_prefix" type="string" value="pioneer2dx"/>
+    <remap from="joint_states" to="pioneer2dx/joint_states" />
+  </node>
+
+  
+</launch>
