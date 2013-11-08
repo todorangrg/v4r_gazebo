@@ -41,7 +41,7 @@
 #include <algorithm>
 #include <assert.h>
 
-#include <gazebo_plugins/gazebo_ros_diff_drive.h>
+#include <v4r_gazebo/gazebo_ros_diff_drive.h>
 
 #include <gazebo/math/gzmath.hh>
 #include <sdf/sdf.hh>

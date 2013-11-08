@@ -25,7 +25,7 @@
  *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  **/
-#include <gazebo_plugins/gazebo_ros_joint_state_publisher.h>
+#include <v4r_gazebo/gazebo_ros_joint_state_publisher.h>
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_listener.h>
 

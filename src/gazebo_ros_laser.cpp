@@ -36,7 +36,7 @@
 
 #include <tf/tf.h>
 
-#include <gazebo_plugins/gazebo_ros_laser.h>
+#include <v4r_gazebo/gazebo_ros_laser.h>
 
 namespace gazebo
 {
