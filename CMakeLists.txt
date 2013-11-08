@@ -86,9 +86,9 @@ link_directories(
 
 ## Declare a cpp executable
 add_executable(joint_publisher src/joint_publisher.cpp)
-add_library(v4r_gazebo_ros_laser ./src/v4r_gazebo_ros_laser.cpp)
-add_library(v4r_gazebo_ros_diff_drive src/v4r_gazebo_ros_diff_drive.cpp)
-add_library(v4r_gazebo_ros_joint_state_publisher src/v4r_gazebo_ros_joint_state_publisher.cpp)
+add_library(v4r_gazebo_ros_laser ./src/gazebo_ros_laser.cpp)
+add_library(v4r_gazebo_ros_diff_drive src/gazebo_ros_diff_drive.cpp)
+add_library(v4r_gazebo_ros_joint_state_publisher src/gazebo_ros_joint_state_publisher.cpp)
 
 
 ## Add cmake target dependencies of the executable/library
