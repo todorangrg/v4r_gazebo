@@ -7,17 +7,17 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://floragasse/meshes/floragasse_collision.dae</uri>
+            <uri>model://room_floragasse/meshes/floragasse_collision.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://floragasse/meshes/floragasse_visual.dae</uri>
+            <uri>model://room_floragasse/meshes/floragasse_visual.dae</uri>
           </mesh>
         </geometry>
-        <cast_shadows>true</cast_shadows>
+        <cast_shadows>false</cast_shadows>
       </visual>
     </link>
   </model>
