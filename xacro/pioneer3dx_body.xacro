@@ -344,8 +344,9 @@
   
   <gazebo>
       <plugin name="joint_state_publisher" filename="libv4r_gazebo_ros_joint_state_publisher.so">
-		<jointName>chassis_swivel_joint, swivel_wheel_joint</jointName>
-		<updateRate>100.0</updateRate>
+		<robotNamespace>/pioneer2dx</robotNamespace>
+		<jointName>chassis_swivel_joint, swivel_wheel_joint, left_hub_joint, right_hub_joint</jointName>
+		<updateRate>10.0</updateRate>
 		<alwaysOn>true</alwaysOn>
       </plugin>
   </gazebo>
@@ -354,7 +355,7 @@
       <plugin name="differential_drive_controller" filename="libv4r_gazebo_ros_diff_drive.so">
 		<robotNamespace>/pioneer2dx</robotNamespace>
 		<publishWheelTF>0</publishWheelTF>
-		<publishWheelJointState>1</publishWheelJointState>
+		<publishWheelJointState>0</publishWheelJointState>
 		<alwaysOn>true</alwaysOn>
 		<leftJoint>left_hub_joint</leftJoint>
 		<rightJoint>right_hub_joint</rightJoint>
