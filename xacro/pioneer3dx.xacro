@@ -3,8 +3,10 @@
   
   <xacro:include filename="$(find v4r_gazebo)/xacro/pioneer3dx_body.xacro"/>
   <xacro:include filename="$(find v4r_gazebo)/xacro/hokuyo.xacro"/>
+  <xacro:include filename="$(find v4r_gazebo)/xacro/camera.xacro"/>
   
   <xacro:p3dx_body />
   <xacro:front_laser xyz="0.16 0 0.1" rpy="0 0 0"/>
+  <xacro:cam_front xyz="0 0 0.5" rpy="0 0 0"/>
 
 </robot>

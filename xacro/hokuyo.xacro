@@ -63,7 +63,7 @@
 			  </range>
 			</ray>
 			
-			<plugin name="laser" filename="libv4r_gazebo_ros_laser.so" >
+			<plugin name="laser" filename="libgazebo_ros_laser.so" >
 			  <topicName>/pioneer2dx/laser/scan</topicName>
 			  <frameName>front_laser</frameName>
 			</plugin>

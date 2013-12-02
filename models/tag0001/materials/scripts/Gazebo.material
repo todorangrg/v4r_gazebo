@@ -1,0 +1,14 @@
+material Gazebo/arTag_00
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture BchThin_0000.gif
+      }
+    }
+  }
+}
+
