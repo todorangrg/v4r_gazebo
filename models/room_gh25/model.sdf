@@ -2,7 +2,7 @@
 <sdf version="1.4">
   <model name="gh25">
     <static>true</static>
-    <pose>-20 -20 0 0 0 0</pose>
+    <!--pose>-20 -20 0 0 0 0</pose-->
     <link name="walls">
       <collision name="collision">
         <geometry>

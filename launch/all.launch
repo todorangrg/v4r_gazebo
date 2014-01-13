@@ -3,17 +3,19 @@
    <!-- Gazebo  -->
   <include file="$(find v4r_gazebo)/launch/world.launch" />
   
-   <!-- RVIZ -->
-   <!--node pkg="rviz" type="rviz" name="rviz" args="-d $(find v4r_gazebo)/cfg/rviz/pioneer3dx.rviz"/-->
   
    <!-- Robot -->
-  <include file="$(find v4r_gazebo)/launch/pioneer3dx.gazebo.launch" />
+  <include file="$(find v4r_gazebo)/launch/pioneer3dx.gazebo.launch" />  
   
    <!-- Room -->
-  <!-- include file="$(find v4r_gazebo)/launch/spawn_room_simple.launch" /-->
-  <include file="$(find v4r_gazebo)/launch/room_hbf.launch" />
+  <!-- include file="$(find v4r_gazebo)/launch/room_simple.launch" /-->
+  <!-- include file="$(find v4r_gazebo)/launch/room_hbf.launch" /-->
+  <include file="$(find v4r_gazebo)/launch/room_gh25.launch" />
   
    <!-- rqt_console -->
    <!-- node pkg="rqt_console" type="rqt_console" name="rqt_console" /-->
 
+   <!-- RVIZ -->
+   <!-- node pkg="rviz" type="rviz" name="rviz" args="-d $(find v4r_gazebo)/cfg/rviz/mapping.rviz"/ -->
+   
 </launch>

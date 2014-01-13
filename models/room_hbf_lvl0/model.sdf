@@ -2,7 +2,6 @@
 <sdf version="1.4">
   <model name="Hbf-Lvl0">
     <static>true</static>
-    <pose>-20 -20 0.01 0 0 0</pose>
     <link name="walls">
       <collision name="collision">
         <geometry>
