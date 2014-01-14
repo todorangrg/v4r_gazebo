@@ -30,14 +30,16 @@
   <build_depend>std_msgs</build_depend>
   <build_depend>geometry_msgs</build_depend>
   <build_depend>robot_state_publisher</build_depend>
-  <build_depend>gazebo_ros</build_depend>
+  <build_depend>gazebo</build_depend>
+  <build_depend>gazebo_msgs</build_depend>
   <!-- Use buildtool_depend for build tool packages: -->
   <buildtool_depend>catkin</buildtool_depend>
   <!-- Use run_depend for packages you need at runtime: -->
   <run_depend>std_msgs</run_depend>
   <run_depend>geometry_msgs</run_depend>
   <run_depend>robot_state_publisher</run_depend>
-  <run_depend>gazebo_ros</run_depend>  
+  <run_depend>gazebo</run_depend>
+  <run_depend>gazebo_msgs</run_depend>
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
 

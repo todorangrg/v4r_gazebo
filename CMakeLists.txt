@@ -7,13 +7,15 @@ project(v4r_gazebo)
 find_package(catkin REQUIRED)
 
 ## System dependencies are found with CMake's conventions
-find_package(catkin REQUIRED COMPONENTS geometry_msgs std_msgs robot_state_publisher gazebo_ros)
+find_package(catkin REQUIRED COMPONENTS geometry_msgs std_msgs robot_state_publisher)
 
-include (FindPkgConfig)
-if (PKG_CONFIG_FOUND)
-  pkg_check_modules(GAZEBO gazebo)
-endif()
+find_package(gazebo REQUIRED)
+find_package(Boost REQUIRED COMPONENTS thread)
 
+MESSAGE( STATUS "GAZEBO_INCLUDE_DIRS:         " ${GAZEBO_INCLUDE_DIRS} )
+MESSAGE( STATUS "SDFormat_INCLUDE_DIRS:       " ${SDFormat_INCLUDE_DIRS} )
+
+include_directories(include ${Boost_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -66,6 +68,7 @@ catkin_package(
 ## Build ##
 ###########
 
+
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
@@ -85,10 +88,10 @@ link_directories(
 # )
 
 ## Declare a cpp executable
-add_executable(joint_publisher src/joint_publisher.cpp)
-add_library(v4r_gazebo_ros_laser ./src/gazebo_ros_laser.cpp)
+#add_executable(joint_publisher src/joint_publisher.cpp)
+#add_library(v4r_gazebo_ros_laser ./src/gazebo_ros_laser.cpp)
 add_library(v4r_gazebo_ros_diff_drive src/gazebo_ros_diff_drive.cpp)
-add_library(v4r_gazebo_ros_joint_state_publisher src/gazebo_ros_joint_state_publisher.cpp)
+#add_library(v4r_gazebo_ros_joint_state_publisher src/gazebo_ros_joint_state_publisher.cpp)
 
 
 ## Add cmake target dependencies of the executable/library
@@ -96,10 +99,10 @@ add_library(v4r_gazebo_ros_joint_state_publisher src/gazebo_ros_joint_state_publ
 # add_dependencies(v4r_gazebo_node v4r_gazebo_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(joint_publisher ${catkin_LIBRARIES})
-target_link_libraries(v4r_gazebo_ros_laser  RayPlugin ${catkin_LIBRARIES})
-target_link_libraries(v4r_gazebo_ros_diff_drive ${catkin_LIBRARIES})
-target_link_libraries(v4r_gazebo_ros_joint_state_publisher  ${catkin_LIBRARIES})
+#target_link_libraries(joint_publisher ${catkin_LIBRARIES})
+#target_link_libraries(v4r_gazebo_ros_laser  RayPlugin ${catkin_LIBRARIES})
+target_link_libraries(v4r_gazebo_ros_diff_drive ${GAZEBO_LIBRARIES} ${SDFormat_LIBRARIES} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+#target_link_libraries(v4r_gazebo_ros_joint_state_publisher  ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -110,9 +113,9 @@ target_link_libraries(v4r_gazebo_ros_joint_state_publisher  ${catkin_LIBRARIES})
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-install(TARGETS joint_publisher
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+#install(TARGETS joint_publisher
+#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS v4r_gazebo v4r_gazebo_node
