@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find v4r_gazebo)/launch/world.launch" />
+	<node name="room_gh25" pkg="gazebo_ros" type="spawn_model" args="-file $(find v4r_gazebo)/models/room_gh25/model.sdf -sdf -x -20.0 -y -9 -model room" />
+</launch>

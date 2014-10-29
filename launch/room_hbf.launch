@@ -1,3 +1,0 @@
-<launch>
-	<node name="room_hbf" pkg="gazebo_ros" type="spawn_model" args="-file $(find v4r_gazebo)/models/room_hbf_lvl0/model.sdf -sdf -x -40.0 -y 0 -model room" />
-</launch>

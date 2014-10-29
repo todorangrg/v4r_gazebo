@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="Gusshausstrasse_Aula">
+    <!-- sky ambient -->
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+    </scene>
+    <!-- 4 global light sources -->
+   <light type="directional" name="Light_source1">
+    <cast_shadows>true</cast_shadows>
+    <pose>0 0 20 0 0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+    <attenuation>
+      <range>1000</range>
+      <constant>0.9</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <direction>0.5 -0.5 -1.0</direction>
+  </light>
+  <light type="directional" name="Light_source2">
+    <cast_shadows>true</cast_shadows>
+    <pose>0 0 20 0 0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+    <attenuation>
+      <range>1000</range>
+      <constant>0.9</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <direction>0.5 0.5 -1.0</direction>
+  </light>
+  <light type="directional" name="Light_source3">
+    <cast_shadows>true</cast_shadows>
+    <pose>0 0 20 0 0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+    <attenuation>
+      <range>1000</range>
+      <constant>0.9</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <direction>-0.5 0.5 -1.0</direction>
+  </light>
+  <light type="directional" name="Light_source4">
+    <cast_shadows>true</cast_shadows>
+    <pose>0 0 20 0 0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+    <attenuation>
+      <range>1000</range>
+      <constant>0.9</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <direction>-0.5 -0.5 -1.0</direction>
+  </light>
+    <!-- A ground plane -->
+  <model name="bottom_plane">
+    <static>true</static>
+    <link name="link">
+    <pose>15 0 -0.7 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>100 100</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>100 100</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  </world>
+</sdf>

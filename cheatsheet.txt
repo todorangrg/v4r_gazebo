@@ -10,14 +10,13 @@ SOURCE:
 
 Simulation:
 	roslaunch v4r_gazebo all.launch
-	roslaunch v4r_gazebo reset_robot.launch  # --> rest's the robots pose
 
 Gmapping:
-	rosrun gmapping slam_gmapping scan:=/pioneer2dx/laser/scan
+	rosrun gmapping slam_gmapping scan:=/r1/front_laser/scan
 	---> visualize the map with rviz
 	
 Robot Control:
-	rosrun v4r_control v4r_control_node cmd_vel:=/pioneer2dx/cmd_vel _control_mode:=teleop _velocity_forward:=0.2 _velocity_angular:=0.2
+	rosrun v4r_control v4r_control_node cmd_vel:=/r1/cmd_vel _control_mode:=teleop _velocity_forward:=0.2 _velocity_angular:=0.2
 
 Save Map:
     rosrun map_server map_saver -f recorded_map
@@ -35,7 +34,7 @@ Load Map:
 	rosrun map_server map_server recorded_map.yaml
 	
 Start localization
-	amcl scan:=/pioneer2dx/laser/scan
+	amcl scan:=/r1/front_laser/scan
 	--> switch in rviz to a the map frame
 	--> select 2D Pose estimate and point to the real robot pose on the map
 	--> now you can use the v4r_control to drive 

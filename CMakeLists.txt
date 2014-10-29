@@ -56,11 +56,11 @@ include_directories(include ${Boost_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS} ${GAZEB
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-   INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include
+#   INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include
    CATKIN_DEPENDS robot_state_publisher geometry_msgs std_msgs
    LIBRARIES lib
-   v4r_gazebo_ros_laser 
-   v4r_gazebo_ros_diff_drive
+#   v4r_gazebo_ros_laser 
+#   v4r_gazebo_ros_diff_drive
 #  DEPENDS system_lib
 )
 
@@ -72,16 +72,16 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
-include_directories(
-  ./include
-  ${catkin_INCLUDE_DIRS}
-  ${GAZEBO_INCLUDE_DIRS}
-  ./src
-)
+#include_directories(
+#  ./include
+#  ${catkin_INCLUDE_DIRS}
+#  ${GAZEBO_INCLUDE_DIRS}
+#  ./src
+#)
 
-link_directories(
-  ${GAZEBO_LIBRARY_DIRS}
-)
+#link_directories(
+#  ${GAZEBO_LIBRARY_DIRS}
+#)
 ## Declare a cpp library
 # add_library(v4r_gazebo
 #   src/${PROJECT_NAME}/v4r_gazebo.cpp
@@ -90,7 +90,7 @@ link_directories(
 ## Declare a cpp executable
 #add_executable(joint_publisher src/joint_publisher.cpp)
 #add_library(v4r_gazebo_ros_laser ./src/gazebo_ros_laser.cpp)
-add_library(v4r_gazebo_ros_diff_drive src/gazebo_ros_diff_drive.cpp)
+#add_library(v4r_gazebo_ros_diff_drive src/gazebo_ros_diff_drive.cpp)
 #add_library(v4r_gazebo_ros_joint_state_publisher src/gazebo_ros_joint_state_publisher.cpp)
 
 
@@ -101,7 +101,7 @@ add_library(v4r_gazebo_ros_diff_drive src/gazebo_ros_diff_drive.cpp)
 ## Specify libraries to link a library or executable target against
 #target_link_libraries(joint_publisher ${catkin_LIBRARIES})
 #target_link_libraries(v4r_gazebo_ros_laser  RayPlugin ${catkin_LIBRARIES})
-target_link_libraries(v4r_gazebo_ros_diff_drive ${GAZEBO_LIBRARIES} ${SDFormat_LIBRARIES} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+#target_link_libraries(v4r_gazebo_ros_diff_drive ${GAZEBO_LIBRARIES} ${SDFormat_LIBRARIES} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 #target_link_libraries(v4r_gazebo_ros_joint_state_publisher  ${catkin_LIBRARIES})
 
 #############

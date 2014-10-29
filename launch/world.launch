@@ -1,8 +1,11 @@
 <launch>
 
-   <!-- Gazebo -->
+  <!-- options : simple or aula -->
+  <arg name="world_name" default="simple" />
+  
+  <!-- Gazebo -->
   <include file="$(find v4r_gazebo)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find v4r_gazebo)/worlds/simple.world"/>
+    <arg name="world_name" value="$(find v4r_gazebo)/worlds/$(arg world_name).world"/>
   </include>
 
 </launch>
